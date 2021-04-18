@@ -1,0 +1,22 @@
+﻿<local:ToastBase x:Class="WPF.Toast.Controls.ToastContent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:local="clr-namespace:WPF.Toast"
+             Padding="5" Height="75" Width="347" >
+
+    <Border  BorderBrush="#C0C0C0" 
+             BorderThickness="2" Margin="2"
+            Padding="10" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  FontWeight="Medium" Padding="5" TextWrapping="Wrap" Foreground="White"
+                   Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=Title}"/>
+            <TextBlock Grid.Row="1" FontSize="12" Padding="5" TextWrapping="Wrap" Foreground="White"
+                   Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=NotificationMessage}"/>
+        </Grid>
+    </Border>
+</local:ToastBase>

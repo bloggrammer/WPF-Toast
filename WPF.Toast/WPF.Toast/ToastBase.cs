@@ -1,0 +1,132 @@
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls.Primitives;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
+
+namespace WPF.Toast
+{
+    /// <summary>
+    /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
+    ///
+    /// Step 1a) Using this custom control in a XAML file that exists in the current project.
+    /// Add this XmlNamespace attribute to the root element of the markup file where it is 
+    /// to be used:
+    ///
+    ///     xmlns:MyNamespace="clr-namespace:WPF.Toast"
+    ///
+    ///
+    /// Step 1b) Using this custom control in a XAML file that exists in a different project.
+    /// Add this XmlNamespace attribute to the root element of the markup file where it is 
+    /// to be used:
+    ///
+    ///     xmlns:MyNamespace="clr-namespace:WPF.Toast;assembly=WPF.Toast"
+    ///
+    /// You will also need to add a project reference from the project where the XAML file lives
+    /// to this project and Rebuild to avoid compilation errors:
+    ///
+    ///     Right click on the target project in the Solution Explorer and
+    ///     "Add Reference"->"Projects"->[Select this project]
+    ///
+    ///
+    /// Step 2)
+    /// Go ahead and use your control in the XAML file.
+    ///
+    ///     <MyNamespace:ToastBase/>
+    ///
+    /// </summary>
+    public abstract class ToastBase : Window
+    {
+        public ToastBase()
+        {
+            Visibility = Visibility.Visible;
+            ShowInTaskbar = false;
+            WindowStyle = WindowStyle.None;
+            ResizeMode = ResizeMode.NoResize;
+            Topmost = true;
+            AllowsTransparency = false;
+            Opacity = 1;
+            BorderThickness = new Thickness(1);
+            BorderBrush = Brushes.Black;
+            Background = Brushes.Black;
+
+
+            _fadeInAnimation = new DoubleAnimation
+            {
+                From = 0,
+                To = 0.8,
+                Duration = new Duration(TimeSpan.Parse("0:0:1.5"))
+            };
+            _fadeOutAnimation = new DoubleAnimation
+            {
+                To = 0,
+                Duration = new Duration(TimeSpan.Parse("0:0:1.5"))
+            };
+
+            Loaded += ToastBase_Loaded;
+        }
+        public override void OnApplyTemplate()
+        {
+            if (Template.FindName("PART_CloseButton", this) is ButtonBase closeButton)
+                closeButton.Click += CloseButton_Click;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            _activeTimer?.Stop();
+            FadeOut();
+        }
+
+        private void ToastBase_Loaded(object sender, RoutedEventArgs e)
+        {
+            Rect workAreaRectangle = SystemParameters.WorkArea;
+            Left = workAreaRectangle.Right - Width - BorderThickness.Right;
+            Top = workAreaRectangle.Bottom - Height - BorderThickness.Bottom;
+
+            _fadeInAnimation.Completed += FadeInAnimation_Completed;
+
+            BeginAnimation(OpacityProperty, _fadeInAnimation);
+        }
+
+        private void FadeInAnimation_Completed(object sender, EventArgs e)
+        {
+            _activeTimer = new DispatcherTimer();
+            if (IsToastAction)
+                _activeTimer.Interval = TimeSpan.FromMinutes(1);
+            else
+                _activeTimer.Interval = TimeSpan.FromSeconds(15);
+
+            _activeTimer.Tick += delegate (object obj, EventArgs ea) { FadeOut(); };
+
+            _activeTimer.Start();
+        }
+
+        private void FadeOut()
+        {
+            _fadeOutAnimation.Completed += delegate (object sender, EventArgs e) { Close(); };
+
+            BeginAnimation(OpacityProperty, _fadeOutAnimation, HandoffBehavior.SnapshotAndReplace);
+        }
+        protected void CloseAction()
+        {
+            _activeTimer?.Stop();
+            FadeOut();
+        }
+
+        [Bindable(true)]
+        public string NotificationMessage
+        {
+            get { return (string)GetValue(NotificationMessageProperty); }
+            set { SetValue(NotificationMessageProperty, value); }
+        }
+        public static readonly DependencyProperty NotificationMessageProperty =
+            DependencyProperty.Register("NotificationMessage", typeof(string), typeof(ToastBase));
+
+        public abstract bool IsToastAction { get; set; }
+        private readonly DoubleAnimation _fadeInAnimation;
+        private readonly DoubleAnimation _fadeOutAnimation;
+        private DispatcherTimer _activeTimer;
+    }
+}

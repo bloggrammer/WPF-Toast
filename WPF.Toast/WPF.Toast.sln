@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Toast", "WPF.Toast\WPF.Toast.csproj", "{E014F8C3-748E-432E-806B-5791E41C289B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp.csproj", "{66EDD06A-B49F-41BF-99D1-BC749C059863}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E014F8C3-748E-432E-806B-5791E41C289B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E014F8C3-748E-432E-806B-5791E41C289B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E014F8C3-748E-432E-806B-5791E41C289B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E014F8C3-748E-432E-806B-5791E41C289B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EDD06A-B49F-41BF-99D1-BC749C059863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EDD06A-B49F-41BF-99D1-BC749C059863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EDD06A-B49F-41BF-99D1-BC749C059863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EDD06A-B49F-41BF-99D1-BC749C059863}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2276398E-4450-4791-878A-5C0E81EDDCD8}
+	EndGlobalSection
+EndGlobal

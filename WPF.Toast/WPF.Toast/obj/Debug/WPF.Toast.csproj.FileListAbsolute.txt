@@ -1,0 +1,18 @@
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastAction.g.cs
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast_MarkupCompile.cache
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast_MarkupCompile.lref
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastAction.baml
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.dll
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.pdb
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\WPF.Toast.dll
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\WPF.Toast.pdb
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Themes\Generic.baml
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.g.resources
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.Properties.Resources.resources
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csproj.GenerateResource.cache
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csproj.CoreCompileInputs.cache
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\Resources\Windows Proximity Notification.wav
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.g.cs
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.baml
+C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csprojAssemblyReference.cache
