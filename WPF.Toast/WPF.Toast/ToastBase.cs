@@ -39,17 +39,23 @@ namespace WPF.Toast
     /// </summary>
     public abstract class ToastBase : Window
     {
+        static ToastBase()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase), new FrameworkPropertyMetadata(typeof(ToastBase)));
+        }
+
         public ToastBase()
         {
+            Width = 350;
+            Height = 75;
             Visibility = Visibility.Visible;
-            ShowInTaskbar = false;
             WindowStyle = WindowStyle.None;
             ResizeMode = ResizeMode.NoResize;
             Topmost = true;
-            AllowsTransparency = false;
-            Opacity = 1;
+            AllowsTransparency = true;
+            Opacity = 0;
             BorderThickness = new Thickness(1);
-            BorderBrush = Brushes.Black;
+            BorderBrush = Brushes.White;
             Background = Brushes.Black;
 
 
