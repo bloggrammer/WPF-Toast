@@ -201,15 +201,15 @@
                         Margin="5,10,0,0">
                 <RadioButton VerticalAlignment="Center"
                              IsChecked="True"
-                             Height="23" GroupName="somaToast"
+                             Height="23" GroupName="toast"
                               x:Name="okAction"
                              Foreground="#C0C0C0" >Sure!</RadioButton>
                 <RadioButton VerticalAlignment="Center" 
-                             Height="23" GroupName="somaToast"
+                             Height="23" GroupName="toast"
                               x:Name="cancelAction"
                              Foreground="#C0C0C0"  >Nah, I'm good.</RadioButton>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Foreground="#C0C0C0" GroupName="somaToast"
+                    <RadioButton Foreground="#C0C0C0" GroupName="toast"
                                   x:Name="snoozedAction"
                                  VerticalAlignment="Center" >Snooze and remind me in:</RadioButton>
                     <ComboBox VerticalAlignment="Center" 

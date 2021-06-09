@@ -30,7 +30,7 @@ namespace WPF.Toast.Controls
             IsSnoozed = (bool)snoozedAction.IsChecked;
             IsCancel = (bool)cancelAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
-            SOMANotificationEvent?.Invoke();
+            ToastNotificationEvent?.Invoke();
             CloseAction();
         }
 
@@ -40,10 +40,10 @@ namespace WPF.Toast.Controls
             SnoozedIndex = snoozedSelection.SelectedIndex;
             IsSnoozed = (bool)snoozedAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
-            SOMANotificationEvent?.Invoke();
+            ToastNotificationEvent?.Invoke();
             CloseAction();
         }
-        public event ToastNotification SOMANotificationEvent;
+        public event ToastNotification ToastNotificationEvent;
     }
 
     public delegate void ToastNotification();
