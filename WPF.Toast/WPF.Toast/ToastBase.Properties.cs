@@ -26,5 +26,19 @@ namespace WPF.Toast {
             var toast = d as ToastBase;
             toast.Position = (Positions)e.NewValue;
         }
+
+
+        [Bindable(true)]
+        public PositionReference PositionReference {
+            get { return (PositionReference)GetValue(PositionReferenceProperty); }
+            set { SetValue(PositionReferenceProperty, value); }
+        }
+        public static readonly DependencyProperty PositionReferenceProperty =
+            DependencyProperty.Register(nameof(PositionReference), typeof(PositionReference), typeof(ToastBase), new PropertyMetadata(PositionReference.Screen, PositionReferenceChanged));
+
+        private static void PositionReferenceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+            var toast = d as ToastBase;
+            toast.PositionReference = (PositionReference)e.NewValue;
+        }
     }
 }

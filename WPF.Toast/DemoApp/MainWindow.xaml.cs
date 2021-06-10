@@ -28,7 +28,8 @@ namespace DemoApp {
             {
                 Title = "Notification: This is Toast Content",
                 NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque..",
-                Position = WPF.Toast.Enums.Positions.West
+                Position = WPF.Toast.Enums.Positions.West,
+                Owner = this
             };
         }
     }

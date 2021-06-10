@@ -1,15 +1,14 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using WPF.Toast.Utils;
+using WPF.Toast.Enums;
+using static WPF.Toast.Utils.PositionCalculator;
 
-namespace WPF.Toast
-{
+
+namespace WPF.Toast {
     /// <summary>
     /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
     ///
@@ -43,7 +42,7 @@ namespace WPF.Toast
     {
         static ToastBase()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase), 
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase),
                 new FrameworkPropertyMetadata(typeof(ToastBase)));
         }
 
@@ -60,7 +59,6 @@ namespace WPF.Toast
             BorderThickness = new Thickness(1);
             BorderBrush = Brushes.White;
             Background = Brushes.Black;
-
 
             _fadeInAnimation = new DoubleAnimation
             {
@@ -90,15 +88,21 @@ namespace WPF.Toast
 
         private void ToastBase_Loaded(object sender, RoutedEventArgs e)
         {
-            var topLeft = PositionCalculator.GetFromWindow(Position, Width, Height, BorderThickness);
+            Tuple<double, double> topLeft;
+            if (PositionReference == Enums.PositionReference.Screen)
+                topLeft = GetFromWindow(Position, Width, Height, BorderThickness);
+            else
+                topLeft = GetFromOwner(Owner.RenderSize,Position, Width, Height, BorderThickness);
+
             Top = topLeft.Item1;
             Left = topLeft.Item2;
-            //Rect workAreaRectangle = SystemParameters.WorkArea;
-            //Left = workAreaRectangle.Right - Width - BorderThickness.Right;
-            //Top = workAreaRectangle.Bottom - Height - BorderThickness.Bottom;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
             BeginAnimation(OpacityProperty, _fadeInAnimation);
+        }
+
+        private Tuple<double, double> GetFromOwner(Size renderSize, Positions position, double width, double height, Thickness borderThickness) {
+            throw new NotImplementedException();
         }
 
         private void FadeInAnimation_Completed(object sender, EventArgs e)
@@ -120,6 +124,7 @@ namespace WPF.Toast
 
             BeginAnimation(OpacityProperty, _fadeOutAnimation, HandoffBehavior.SnapshotAndReplace);
         }
+
         protected void CloseAction()
         {
             _activeTimer?.Stop();
