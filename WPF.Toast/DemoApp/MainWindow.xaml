@@ -7,8 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <StackPanel Orientation="Horizontal">
-        <Button Click="ToastAction_Button_Click" Height="50" Margin="10" Content="Show Toast Action" HorizontalAlignment="Left"/>
-        <Button Click="ToastContent_Button_Click" Height="50" Margin="10" Content="Show Toast Content" HorizontalAlignment="Right"/>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="0">
+            <Button Click="ToastAction_Button_Click" Height="50" Margin="10" Content="Show Toast Action" HorizontalAlignment="Left"/>
+            <Button Click="ToastContent_Button_Click" Height="50" Margin="10" Content="Show Toast Content" HorizontalAlignment="Right"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <GroupBox Header="Position Reference">
+                <StackPanel>
+                    <RadioButton GroupName="positionReference" Checked="PositionReference_Checked" Content="Screen"/>
+                    <RadioButton GroupName="positionReference" Checked="PositionReference_Checked" Content="Owner"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Position settings">
+                <StackPanel>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="North"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="South"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="East"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="West"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="NorthEast"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="NorthWest"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="SouthEast"/>
+                    <RadioButton GroupName="position" Checked="Position_Checked" Content="SouthWest"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
 </Window>

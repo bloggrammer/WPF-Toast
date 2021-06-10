@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using WPF.Toast.Controls;
+using WPF.Toast.Enums;
 
 namespace DemoApp {
     /// <summary>
@@ -18,7 +21,9 @@ namespace DemoApp {
             {
                 Title = "Notification: This is Toast Action",
                 NotificationMessage = "I am toast action",
-                Position = WPF.Toast.Enums.Positions.East
+                Position = _positions != null ? _positions.Value : Positions.Central,
+                PositionReference = _positionReference != null ? _positionReference.Value : PositionReference.Owner,
+                Owner = this
             };
         }
 
@@ -28,9 +33,26 @@ namespace DemoApp {
             {
                 Title = "Notification: This is Toast Content",
                 NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque..",
-                Position = WPF.Toast.Enums.Positions.West,
+                Position = _positions != null? _positions.Value : Positions.Central,
+                PositionReference = _positionReference !=null ? _positionReference.Value: PositionReference.Owner,
                 Owner = this
             };
         }
+
+        private void Position_Checked(object sender, RoutedEventArgs e) {
+            var radioButton = sender as RadioButton;
+            var value = (Positions)Enum.Parse(typeof(Positions),radioButton.Content.ToString());
+            _positions = value;
+        }
+
+        private void PositionReference_Checked(object sender, RoutedEventArgs e) {
+            var radioButton = sender as RadioButton;
+            var value = (PositionReference)Enum.Parse(typeof(PositionReference), radioButton.Content.ToString());
+            _positionReference = value;
+        }
+        
+
+        private Positions? _positions;
+        private PositionReference? _positionReference;
     }
 }

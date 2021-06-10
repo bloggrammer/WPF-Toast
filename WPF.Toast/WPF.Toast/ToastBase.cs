@@ -5,6 +5,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using WPF.Toast.Enums;
+using WPF.Toast.Exceptions;
 using static WPF.Toast.Utils.PositionCalculator;
 
 
@@ -89,20 +90,20 @@ namespace WPF.Toast {
         private void ToastBase_Loaded(object sender, RoutedEventArgs e)
         {
             Tuple<double, double> topLeft;
-            if (PositionReference == Enums.PositionReference.Screen)
+            if (PositionReference == PositionReference.Screen)
                 topLeft = GetFromWindow(Position, Width, Height, BorderThickness);
-            else
-                topLeft = GetFromOwner(Owner.RenderSize,Position, Width, Height, BorderThickness);
-
+            else 
+            {
+                if (Owner is null)
+                    throw new InvalidOwnerException();
+                topLeft = GetFromOwner(new Rect(new Point(Owner.Left,Owner.Top),Owner.RenderSize), Position, Width, Height, BorderThickness);
+            }
+            
             Top = topLeft.Item1;
             Left = topLeft.Item2;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
             BeginAnimation(OpacityProperty, _fadeInAnimation);
-        }
-
-        private Tuple<double, double> GetFromOwner(Size renderSize, Positions position, double width, double height, Thickness borderThickness) {
-            throw new NotImplementedException();
         }
 
         private void FadeInAnimation_Completed(object sender, EventArgs e)

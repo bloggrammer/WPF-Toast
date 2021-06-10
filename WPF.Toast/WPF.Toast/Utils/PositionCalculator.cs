@@ -5,16 +5,19 @@ using WPF.Toast.Enums;
 namespace WPF.Toast.Utils {
     public static class PositionCalculator {
 
-        public static Tuple<double,double> GetFromWindow(Positions position, double width, double height, Thickness borderThickness) {
+        public static Tuple<double,double> GetFromWindow(Positions position, double width, double height, Thickness borderThickness) 
+        {
             var workAreaRectangle = SystemParameters.WorkArea;
             return Calculate(position, width, height, borderThickness, workAreaRectangle);
         }
 
-        public static Tuple<double, double> GetFromOwner(Size renderSize, Positions position, double width, double height, Thickness borderThickness) {
-            throw new NotImplementedException();
+        public static Tuple<double, double> GetFromOwner(Rect workArea, Positions position, double width, double height, Thickness borderThickness)
+        {
+            return Calculate(position, width, height, borderThickness, workArea);
         }
 
-        private static Tuple<double, double> Calculate(Positions position, double width, double height, Thickness borderThickness, Rect workAreaRectangle) {
+        private static Tuple<double, double> Calculate(Positions position, double width, double height, Thickness borderThickness, Rect workAreaRectangle)
+        {
             double top, left;
             switch (position) {
                 case Positions.East:
