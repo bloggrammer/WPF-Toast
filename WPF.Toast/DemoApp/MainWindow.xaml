@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        WindowState="Maximized">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="0">
             <Button Click="ToastAction_Button_Click" Height="50" Margin="10" Content="Show Toast Action" HorizontalAlignment="Left"/>
             <Button Click="ToastContent_Button_Click" Height="50" Margin="10" Content="Show Toast Content" HorizontalAlignment="Right"/>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Row="1">
             <GroupBox Header="Position Reference">
                 <StackPanel>
                     <RadioButton GroupName="positionReference" Checked="PositionReference_Checked" Content="Screen"/>
