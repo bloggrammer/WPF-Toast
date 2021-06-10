@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\
 WPF.Toast
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 3221612483
 1-1539851932
-71828958861
+10-847218448
 131569487696
 Controls\ToastAction.xaml;Controls\ToastContent.xaml;Themes\Generic.xaml;
 
-True
+False
 

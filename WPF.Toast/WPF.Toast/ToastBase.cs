@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using WPF.Toast.Utils;
 
 namespace WPF.Toast
 {
@@ -37,11 +39,12 @@ namespace WPF.Toast
     ///     <MyNamespace:ToastBase/>
     ///
     /// </summary>
-    public abstract class ToastBase : Window
+    public abstract partial class ToastBase : Window
     {
         static ToastBase()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase), new FrameworkPropertyMetadata(typeof(ToastBase)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase), 
+                new FrameworkPropertyMetadata(typeof(ToastBase)));
         }
 
         public ToastBase()
@@ -87,10 +90,12 @@ namespace WPF.Toast
 
         private void ToastBase_Loaded(object sender, RoutedEventArgs e)
         {
-            Rect workAreaRectangle = SystemParameters.WorkArea;
-            Left = workAreaRectangle.Right - Width - BorderThickness.Right;
-            Top = workAreaRectangle.Bottom - Height - BorderThickness.Bottom;
-
+            var topLeft = PositionCalculator.GetFromWindow(Position, Width, Height, BorderThickness);
+            Top = topLeft.Item1;
+            Left = topLeft.Item2;
+            //Rect workAreaRectangle = SystemParameters.WorkArea;
+            //Left = workAreaRectangle.Right - Width - BorderThickness.Right;
+            //Top = workAreaRectangle.Bottom - Height - BorderThickness.Bottom;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
             BeginAnimation(OpacityProperty, _fadeInAnimation);
@@ -120,15 +125,6 @@ namespace WPF.Toast
             _activeTimer?.Stop();
             FadeOut();
         }
-
-        [Bindable(true)]
-        public string NotificationMessage
-        {
-            get { return (string)GetValue(NotificationMessageProperty); }
-            set { SetValue(NotificationMessageProperty, value); }
-        }
-        public static readonly DependencyProperty NotificationMessageProperty =
-            DependencyProperty.Register("NotificationMessage", typeof(string), typeof(ToastBase));
 
         public abstract bool IsToastAction { get; set; }
         private readonly DoubleAnimation _fadeInAnimation;

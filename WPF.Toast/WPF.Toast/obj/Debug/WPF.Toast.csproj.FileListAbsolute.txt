@@ -16,3 +16,21 @@ C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\Resources\Windows Pro
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.g.cs
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.baml
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csprojAssemblyReference.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\Resources\Windows Proximity Notification.wav
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\WPF.Toast.dll
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\bin\Debug\WPF.Toast.pdb
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csprojAssemblyReference.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastAction.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast_MarkupCompile.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast_MarkupCompile.lref
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastAction.baml
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Controls\ToastContent.baml
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Themes\Generic.baml
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.g.resources
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.Properties.Resources.resources
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csproj.GenerateResource.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.dll
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.pdb

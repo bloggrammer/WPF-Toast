@@ -17,3 +17,22 @@ C:\xampp\locale\pr\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csproj.CoreComp
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csproj.CopyComplete
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.exe
 C:\xampp\locale\pr\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.pdb
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\Resources\Windows Proximity Notification.wav
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\DemoApp.exe.config
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\DemoApp.exe
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\DemoApp.pdb
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\WPF.Toast.dll
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\bin\Debug\WPF.Toast.pdb
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csprojAssemblyReference.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\App.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp_MarkupCompile.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp_MarkupCompile.lref
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.g.resources
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.Properties.Resources.resources
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csproj.GenerateResource.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.csproj.CopyComplete
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.exe
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\DemoApp\obj\Debug\DemoApp.pdb
