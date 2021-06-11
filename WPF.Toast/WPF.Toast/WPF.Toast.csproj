@@ -48,6 +48,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\PositionReference.cs" />
+    <Compile Include="Exceptions\InvalidOwnerException.cs" />
+    <Compile Include="ToastBase.Properties.cs" />
+    <Compile Include="Utils\PositionCalculator.cs" />
     <Page Include="Controls\ToastAction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,7 @@
     <Compile Include="Controls\ToastContent.xaml.cs">
       <DependentUpon>ToastContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Positions.cs" />
     <Compile Include="ToastBase.cs">
       <SubType>Code</SubType>
     </Compile>

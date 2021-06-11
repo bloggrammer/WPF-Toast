@@ -1,13 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using WPF.Toast.Enums;
+using WPF.Toast.Exceptions;
+using static WPF.Toast.Utils.PositionCalculator;
 
-namespace WPF.Toast
-{
+
+namespace WPF.Toast {
     /// <summary>
     /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
     ///
@@ -37,11 +39,12 @@ namespace WPF.Toast
     ///     <MyNamespace:ToastBase/>
     ///
     /// </summary>
-    public abstract class ToastBase : Window
+    public abstract partial class ToastBase : Window
     {
         static ToastBase()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase), new FrameworkPropertyMetadata(typeof(ToastBase)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ToastBase),
+                new FrameworkPropertyMetadata(typeof(ToastBase)));
         }
 
         public ToastBase()
@@ -57,7 +60,6 @@ namespace WPF.Toast
             BorderThickness = new Thickness(1);
             BorderBrush = Brushes.White;
             Background = Brushes.Black;
-
 
             _fadeInAnimation = new DoubleAnimation
             {
@@ -87,10 +89,18 @@ namespace WPF.Toast
 
         private void ToastBase_Loaded(object sender, RoutedEventArgs e)
         {
-            Rect workAreaRectangle = SystemParameters.WorkArea;
-            Left = workAreaRectangle.Right - Width - BorderThickness.Right;
-            Top = workAreaRectangle.Bottom - Height - BorderThickness.Bottom;
-
+            Tuple<double, double> topLeft;
+            if (PositionReference == PositionReference.Screen)
+                topLeft = GetFromWindow(Position, Width, Height, BorderThickness);
+            else 
+            {
+                if (Owner is null)
+                    throw new InvalidOwnerException();
+                topLeft = GetFromOwner(new Rect(new Point(Owner.Left,Owner.Top),Owner.RenderSize), Position, Width, Height, BorderThickness);
+            }
+            
+            Top = topLeft.Item1;
+            Left = topLeft.Item2;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
             BeginAnimation(OpacityProperty, _fadeInAnimation);
@@ -115,20 +125,12 @@ namespace WPF.Toast
 
             BeginAnimation(OpacityProperty, _fadeOutAnimation, HandoffBehavior.SnapshotAndReplace);
         }
+
         protected void CloseAction()
         {
             _activeTimer?.Stop();
             FadeOut();
         }
-
-        [Bindable(true)]
-        public string NotificationMessage
-        {
-            get { return (string)GetValue(NotificationMessageProperty); }
-            set { SetValue(NotificationMessageProperty, value); }
-        }
-        public static readonly DependencyProperty NotificationMessageProperty =
-            DependencyProperty.Register("NotificationMessage", typeof(string), typeof(ToastBase));
 
         public abstract bool IsToastAction { get; set; }
         private readonly DoubleAnimation _fadeInAnimation;
