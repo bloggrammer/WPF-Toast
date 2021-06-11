@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WPF.Toast.Controls;
+using WPF.Toast.Enums;
 
-namespace DemoApp
-{
+namespace DemoApp {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -28,10 +17,13 @@ namespace DemoApp
 
         private void ToastAction_Button_Click(object sender, RoutedEventArgs e)
         {
-             new ToastAction
+            new ToastAction 
             {
                 Title = "Notification: This is Toast Action",
-                NotificationMessage = "I am toast action"
+                NotificationMessage = "I am toast action",
+                Position = _positions != null ? _positions.Value : Positions.Central,
+                PositionReference = _positionReference != null ? _positionReference.Value : PositionReference.Owner,
+                Owner = this
             };
         }
 
@@ -40,8 +32,27 @@ namespace DemoApp
             new ToastContent
             {
                 Title = "Notification: This is Toast Content",
-                NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque.."
+                NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque..",
+                Position = _positions != null? _positions.Value : Positions.Central,
+                PositionReference = _positionReference !=null ? _positionReference.Value: PositionReference.Owner,
+                Owner = this
             };
         }
+
+        private void Position_Checked(object sender, RoutedEventArgs e) {
+            var radioButton = sender as RadioButton;
+            var value = (Positions)Enum.Parse(typeof(Positions),radioButton.Content.ToString());
+            _positions = value;
+        }
+
+        private void PositionReference_Checked(object sender, RoutedEventArgs e) {
+            var radioButton = sender as RadioButton;
+            var value = (PositionReference)Enum.Parse(typeof(PositionReference), radioButton.Content.ToString());
+            _positionReference = value;
+        }
+        
+
+        private Positions? _positions;
+        private PositionReference? _positionReference;
     }
 }
