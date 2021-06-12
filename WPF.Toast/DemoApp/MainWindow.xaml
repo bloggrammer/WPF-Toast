@@ -36,6 +36,12 @@
                     <RadioButton GroupName="position" Checked="Position_Checked" Content="SouthWest"/>
                 </StackPanel>
             </GroupBox>
+            <GroupBox Header="Show Time">
+                <StackPanel>
+                    <Label Name="TimeLabel" Content="Show time in seconds: 20s"></Label>
+                    <Slider Minimum="0" Maximum="500" Value="20" ValueChanged="TimeSlider_OnValueChanged"></Slider>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
     </Grid>
 </Window>
