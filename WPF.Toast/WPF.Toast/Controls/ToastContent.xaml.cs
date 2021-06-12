@@ -8,7 +8,8 @@ namespace WPF.Toast.Controls
     /// </summary>
     public partial class ToastContent : ToastBase
     {
-        public ToastContent()
+        /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
+        public ToastContent(int? fadeTimeOut = null) : base(fadeTimeOut)
         {
             InitializeComponent();
             

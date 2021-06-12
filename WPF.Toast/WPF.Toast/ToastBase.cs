@@ -9,7 +9,8 @@ using WPF.Toast.Exceptions;
 using static WPF.Toast.Utils.PositionCalculator;
 
 
-namespace WPF.Toast {
+namespace WPF.Toast
+{
     /// <summary>
     /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
     ///
@@ -47,7 +48,8 @@ namespace WPF.Toast {
                 new FrameworkPropertyMetadata(typeof(ToastBase)));
         }
 
-        public ToastBase()
+        /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
+        public ToastBase(int? fadeTimeOut = null)
         {
             Width = 350;
             Height = 75;
@@ -74,6 +76,7 @@ namespace WPF.Toast {
             };
 
             Loaded += ToastBase_Loaded;
+            _fadeTimout = fadeTimeOut;
         }
         public override void OnApplyTemplate()
         {
@@ -92,13 +95,13 @@ namespace WPF.Toast {
             Tuple<double, double> topLeft;
             if (PositionReference == PositionReference.Screen)
                 topLeft = GetFromWindow(Position, Width, Height, BorderThickness);
-            else 
+            else
             {
                 if (Owner is null)
                     throw new InvalidOwnerException();
-                topLeft = GetFromOwner(new Rect(new Point(Owner.Left,Owner.Top),Owner.RenderSize), Position, Width, Height, BorderThickness);
+                topLeft = GetFromOwner(new Rect(new Point(Owner.Left, Owner.Top), Owner.RenderSize), Position, Width, Height, BorderThickness);
             }
-            
+
             Top = topLeft.Item1;
             Left = topLeft.Item2;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
@@ -109,7 +112,9 @@ namespace WPF.Toast {
         private void FadeInAnimation_Completed(object sender, EventArgs e)
         {
             _activeTimer = new DispatcherTimer();
-            if (IsToastAction)
+            if (_fadeTimout.HasValue && _fadeTimout > 0)
+                _activeTimer.Interval = TimeSpan.FromSeconds(_fadeTimout.Value);
+            else if (IsToastAction)
                 _activeTimer.Interval = TimeSpan.FromMinutes(1);
             else
                 _activeTimer.Interval = TimeSpan.FromSeconds(15);
@@ -136,5 +141,10 @@ namespace WPF.Toast {
         private readonly DoubleAnimation _fadeInAnimation;
         private readonly DoubleAnimation _fadeOutAnimation;
         private DispatcherTimer _activeTimer;
+
+        /// <summary>
+        /// FadeOut timer in seconds
+        /// </summary>
+        private int? _fadeTimout;
     }
 }
