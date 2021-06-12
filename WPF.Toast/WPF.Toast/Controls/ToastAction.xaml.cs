@@ -8,7 +8,8 @@ namespace WPF.Toast.Controls
     /// </summary>
     public partial class ToastAction : ToastBase
     {
-        public ToastAction()
+        /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
+        public ToastAction(int? fadeTimeOut = null) : base(fadeTimeOut)
         {
             InitializeComponent();
             try
@@ -19,6 +20,7 @@ namespace WPF.Toast.Controls
             }
             catch { }
         }
+
         public bool IsCancel { get; set; }
         public bool IsOK { get; set; }
         public bool IsSnoozed { get; set; }
