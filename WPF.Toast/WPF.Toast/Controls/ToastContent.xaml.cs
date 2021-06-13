@@ -8,13 +8,12 @@ namespace WPF.Toast.Controls
     /// </summary>
     public partial class ToastContent : ToastBase
     {
-        /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
-
         public ToastContent() : this(null)
         {
             
         }
-
+        
+        /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
         public ToastContent(int? fadeTimeOut) : base(fadeTimeOut)
         {
             InitializeComponent();
