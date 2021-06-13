@@ -9,7 +9,13 @@ namespace WPF.Toast.Controls
     public partial class ToastAction : ToastBase
     {
         /// <param name="fadeTimeOut">Timer for fade out in seconds</param>
-        public ToastAction(int? fadeTimeOut = null) : base(fadeTimeOut)
+
+        public ToastAction() : this(null)
+        {
+
+        }
+
+        public ToastAction(int? fadeTimeOut) : base(fadeTimeOut)
         {
             InitializeComponent();
             try
