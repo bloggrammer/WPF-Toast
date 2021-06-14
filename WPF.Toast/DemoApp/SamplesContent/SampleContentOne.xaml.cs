@@ -2,7 +2,7 @@
 using WPF.Toast.Events;
 using WPF.Toast.Interfaces;
 
-namespace WPF.Toast.Samples
+namespace DemoApp.SamplesContent
 {
     /// <summary>
     /// Interaction logic for SampleContentOne.xaml

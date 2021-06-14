@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DemoApp.SamplesContent;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using WPF.Toast.Controls;
 using WPF.Toast.Enums;
-using WPF.Toast.Samples;
 
-namespace DemoApp {
+namespace DemoApp
+{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
