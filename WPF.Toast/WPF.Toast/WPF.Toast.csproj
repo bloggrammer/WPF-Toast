@@ -52,9 +52,6 @@
     <Compile Include="Events\ToastActionContentEventHandler.cs" />
     <Compile Include="Exceptions\InvalidOwnerException.cs" />
     <Compile Include="Interfaces\IToastActionContent.cs" />
-    <Compile Include="Samples\SampleContentOne.xaml.cs">
-      <DependentUpon>SampleContentOne.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToastBase.Properties.cs" />
     <Compile Include="Utils\PositionCalculator.cs" />
     <Compile Include="Utils\ThemeKeys.cs" />
@@ -63,10 +60,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ToastContent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Samples\SampleContentOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -72,8 +72,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ToastActionContent.xaml.cs">
-      <DependentUpon>ToastActionContent.xaml</DependentUpon>
+    <Compile Include="SamplesContent\SampleContentOne.xaml.cs">
+      <DependentUpon>SampleContentOne.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -87,7 +87,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ToastActionContent.xaml">
+    <Page Include="SamplesContent\SampleContentOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
