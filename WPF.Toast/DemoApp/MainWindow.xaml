@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DemoApp"
+        xmlns:extended="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="MainWindow"
-        WindowState="Maximized">
+        WindowState="Minimized">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -41,6 +41,33 @@
                     <Label Name="TimeLabel" Content="Show time in seconds: 20ss"></Label>
                     <Slider Minimum="0" Maximum="500" Value="20" ValueChanged="TimeSlider_OnValueChanged"></Slider>
                 </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Theming">
+                <WrapPanel Orientation="Horizontal">
+                    <TextBlock Text="ToastCloseButtonBackground" Margin="5"/>
+                    <extended:ColorPicker  HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastCloseButtonBackground_SelectedColorChanged"/>
+
+                    <TextBlock Text="ToastCloseButtonForeground" Margin="5"/>
+                    <extended:ColorPicker HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastCloseButtonForeground_SelectedColorChanged"/>
+
+                    <TextBlock Text="ToastBackground" Margin="5"/>
+                    <extended:ColorPicker  HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastBackground_SelectedColorChanged"/>
+
+                    <TextBlock Text="ToastBorderBrush" Margin="5"/>
+                    <extended:ColorPicker HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastBorderBrush_SelectedColorChanged"/>
+
+                    <TextBlock Text="ToastContentForeground" Margin="5"/>
+                    <extended:ColorPicker  HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastContentForeground_SelectedColorChanged"/>
+
+                    <TextBlock Text="ToastHeaderBackground" Margin="5"/>
+                    <extended:ColorPicker HorizontalAlignment="Center" 
+                                          Width="70" SelectedColorChanged="ToastHeaderBackground_SelectedColorChanged"/>
+                </WrapPanel>
             </GroupBox>
         </StackPanel>
     </Grid>

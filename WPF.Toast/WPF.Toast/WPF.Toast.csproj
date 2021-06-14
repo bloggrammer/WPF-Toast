@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IToastActionContent.cs" />
     <Compile Include="ToastBase.Properties.cs" />
     <Compile Include="Utils\PositionCalculator.cs" />
+    <Compile Include="Utils\ThemeKeys.cs" />
     <Page Include="Controls\ToastAction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

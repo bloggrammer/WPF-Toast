@@ -3,7 +3,7 @@ using System.Windows;
 using WPF.Toast.Enums;
 
 namespace WPF.Toast.Utils {
-    public static class PositionCalculator {
+    internal static class PositionCalculator {
 
         public static Tuple<double,double> GetFromWindow(Positions position, double width, double height, Thickness borderThickness) 
         {

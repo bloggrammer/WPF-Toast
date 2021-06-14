@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
           xmlns:local="clr-namespace:WPF.Toast"
                  Padding="5">
-    <TextBlock FontSize="12" Padding="5" TextWrapping="Wrap" Foreground="White"
+    <TextBlock FontSize="12" Padding="5" TextWrapping="Wrap" Foreground="{DynamicResource ToastContentForeground}"
                    Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=NotificationMessage}"/>
 </local:ToastBase>

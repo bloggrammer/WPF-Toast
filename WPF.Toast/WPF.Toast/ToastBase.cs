@@ -7,10 +7,10 @@ using System.Windows.Threading;
 using WPF.Toast.Enums;
 using WPF.Toast.Exceptions;
 using static WPF.Toast.Utils.PositionCalculator;
+using static WPF.Toast.Utils.ThemeKeys;
+using static System.Windows.Application;
 
-
-namespace WPF.Toast
-{
+namespace WPF.Toast {
     /// <summary>
     /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
     ///
@@ -90,13 +90,11 @@ namespace WPF.Toast
             FadeOut();
         }
 
-        private void ToastBase_Loaded(object sender, RoutedEventArgs e)
-        {
+        private void ToastBase_Loaded(object sender, RoutedEventArgs e) {
             Tuple<double, double> topLeft;
             if (PositionReference == PositionReference.Screen)
                 topLeft = GetFromWindow(Position, Width, Height, BorderThickness);
-            else
-            {
+            else {
                 if (Owner is null)
                     throw new InvalidOwnerException();
                 topLeft = GetFromOwner(new Rect(new Point(Owner.Left, Owner.Top), Owner.RenderSize), Position, Width, Height, BorderThickness);
@@ -106,7 +104,39 @@ namespace WPF.Toast
             Left = topLeft.Item2;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
+            ApplyDefaultThemes();
+
+            // Inject close action in tag
+            var contentControl = Content as FrameworkElement;
+            contentControl.Tag = new Action(CloseAction);
+
             BeginAnimation(OpacityProperty, _fadeInAnimation);
+        }
+
+        private void ApplyDefaultThemes() {
+            if (Current.Resources[ToastBackground] is null) {
+                Current.Resources.Add(ToastBackground, new SolidColorBrush(Colors.Black));
+            }
+
+            if (Current.Resources[ToastBorderBrush] is null) {
+                Current.Resources.Add(ToastBorderBrush, new SolidColorBrush(Colors.Black));
+            }
+
+            if (Current.Resources[ToastContentForeground] is null) {
+                Current.Resources.Add(ToastContentForeground, new SolidColorBrush(Colors.White));
+            }
+
+            if (Current.Resources[ToastCloseButtonBackground] is null) {
+                Current.Resources.Add(ToastCloseButtonBackground, new SolidColorBrush(Colors.Transparent));
+            }
+
+            if (Current.Resources[ToastCloseButtonForeground] is null) {
+                Current.Resources.Add(ToastCloseButtonForeground, new SolidColorBrush(Colors.Black));
+            }
+
+            if (Current.Resources[ToastHeaderBackground] is null) {
+                Current.Resources.Add(ToastHeaderBackground, new SolidColorBrush(Colors.LightGray));
+            }
         }
 
         private void FadeInAnimation_Completed(object sender, EventArgs e)
