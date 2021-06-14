@@ -174,6 +174,6 @@ namespace WPF.Toast {
         /// <summary>
         /// FadeOut timer in seconds
         /// </summary>
-        private int? _fadeTimout;
+        private readonly int? _fadeTimout;
     }
 }

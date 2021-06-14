@@ -26,7 +26,7 @@ namespace DemoApp
                 NotificationMessage = "I am toast action",
                 Position = _positions != null ? _positions.Value : Positions.Central,
                 PositionReference = _positionReference != null ? _positionReference.Value : PositionReference.Owner,
-                Content = new ToastActionContent(),
+                Content = new SampleContentOne(),
                 Owner = this
             };
         }

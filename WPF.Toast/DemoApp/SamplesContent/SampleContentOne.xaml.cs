@@ -1,13 +1,12 @@
-﻿using System.Windows.Controls;
-using WPF.Toast.Events;
-using WPF.Toast.Interfaces;
+﻿using System;
+using System.Windows.Controls;
 
 namespace DemoApp.SamplesContent
 {
     /// <summary>
     /// Interaction logic for SampleContentOne.xaml
     /// </summary>
-    public partial class SampleContentOne : Border, IToastActionContent
+    public partial class SampleContentOne : Border
     {
         public SampleContentOne()
         {
@@ -19,6 +18,7 @@ namespace DemoApp.SamplesContent
             IsSnoozed = (bool)snoozedAction.IsChecked;
             IsCancel = (bool)cancelAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
+            Close();
         }
 
         private void OnCancelClick(object sender, System.Windows.RoutedEventArgs e)
@@ -27,13 +27,19 @@ namespace DemoApp.SamplesContent
             SnoozedIndex = snoozedSelection.SelectedIndex;
             IsSnoozed = (bool)snoozedAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
-            ToastClosed?.Invoke(this);
+            Close();
+        }
+
+        private void Close()
+        {
+            if (Tag is Action action)
+                action();
         }
         public bool IsCancel { get; set; }
         public bool IsOK { get; set; }
         public bool IsSnoozed { get; set; }
         public int SnoozedIndex { get; set; }
 
-        public event ToastActionContentEventHandler ToastClosed;
+
     }
 }
