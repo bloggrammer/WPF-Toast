@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Media;
 
-namespace WPF.Toast.Controls
-{
+namespace WPF.Toast.Controls {
     /// <summary>
     /// Interaction logic for ToastAction.xaml
     /// </summary>
@@ -22,5 +21,6 @@ namespace WPF.Toast.Controls
         }
 
         public override bool IsToastAction { get; set; } = true;
+
     }
 }

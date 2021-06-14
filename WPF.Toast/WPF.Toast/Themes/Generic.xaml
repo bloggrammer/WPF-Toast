@@ -40,7 +40,7 @@
                                 <RowDefinition Height="20"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" Background="LightGray">
+                            <Grid Grid.Row="0" Background="{DynamicResource ToastHeaderBackground}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>

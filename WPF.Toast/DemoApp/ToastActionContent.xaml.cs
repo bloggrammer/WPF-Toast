@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 
 namespace DemoApp {
     /// <summary>
@@ -20,7 +21,10 @@ namespace DemoApp {
             IsCancel = (bool)cancelAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
             ToastNotificationEvent?.Invoke();
-           // CloseAction();
+           
+           // Utilize the tag as the close action
+           var close = Tag as Action;
+            close();
         }
 
         private void OnCancelClick(object sender, System.Windows.RoutedEventArgs e) {
@@ -29,7 +33,10 @@ namespace DemoApp {
             IsSnoozed = (bool)snoozedAction.IsChecked;
             IsOK = (bool)okAction.IsChecked;
             ToastNotificationEvent?.Invoke();
-            //CloseAction();
+
+            // Utilize the tag as the close action
+            var close = Tag as Action;
+            close();
         }
         public event ToastNotification ToastNotificationEvent;
     }
