@@ -15,7 +15,7 @@ namespace WPF.Toast.Controls
             try
             {
                 MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer.Open(new Uri(@"Resources\Windows Proximity Notification.wav"));
+                mediaPlayer.Open(new Uri(@"Resources\Windows Proximity Notification.wav", UriKind.Relative));
                 mediaPlayer.Play();
             }
             catch { }
