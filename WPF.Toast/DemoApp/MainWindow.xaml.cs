@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using WPF.Toast.Controls;
 using WPF.Toast.Enums;
 
@@ -55,6 +56,43 @@ namespace DemoApp {
             _fadeTimeOut = (int) e.NewValue;
             TimeLabel.Content = $"Show time in seconds: {_fadeTimeOut}s (Set 0 for default timing)";
         }
+
+        private void ToastCloseButtonBackground_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e) {
+            if (Application.Current.Resources.Contains("ToastCloseButtonBackground"))
+                Application.Current.Resources.Remove("ToastCloseButtonBackground");
+            Application.Current.Resources.Add("ToastCloseButtonBackground", new SolidColorBrush(e.NewValue.Value));
+        }
+
+        private void ToastCloseButtonForeground_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e) {
+            if (Application.Current.Resources.Contains("ToastCloseButtonForeground"))
+                Application.Current.Resources.Remove("ToastCloseButtonForeground");
+            Application.Current.Resources.Add("ToastCloseButtonForeground", new SolidColorBrush(e.NewValue.Value));
+        }
+
+        private void ToastBackground_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e) {
+            if (Application.Current.Resources.Contains("ToastBackground"))
+                Application.Current.Resources.Remove("ToastBackground");
+            Application.Current.Resources.Add("ToastBackground", new SolidColorBrush(e.NewValue.Value));
+        }
+
+        private void ToastBorderBrush_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e) {
+            if (Application.Current.Resources.Contains("ToastBorderBrush"))
+                Application.Current.Resources.Remove("ToastBorderBrush");
+            Application.Current.Resources.Add("ToastBorderBrush", new SolidColorBrush(e.NewValue.Value));
+        }
+
+        private void ToastContentForeground_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e) {
+            if (Application.Current.Resources.Contains("ToastContentForeground"))
+                Application.Current.Resources.Remove("ToastContentForeground");
+            Application.Current.Resources.Add("ToastContentForeground", new SolidColorBrush(e.NewValue.Value));
+        }
+
+        private void ToastHeaderBackground_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e) {
+            if (Application.Current.Resources.Contains("ToastHeaderBackground"))
+                Application.Current.Resources.Remove("ToastHeaderBackground");
+            Application.Current.Resources.Add("ToastHeaderBackground", new SolidColorBrush(e.NewValue.Value));
+        }
+
 
         private Positions? _positions;
         private PositionReference? _positionReference;
