@@ -23,6 +23,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+bin/
+obj/
+Debug/
+Release/
 
 uploads/
 
