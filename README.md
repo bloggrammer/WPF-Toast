@@ -2,6 +2,10 @@
 
 Show Toast Notifications in WPF Applications
 
+# Demo-App:
+Here is a demo app ;)
+![demo gif](doc/Demo-Gif.gif)
+
 ## How to Show Toast Notifications in Your Next WPF Apps
 
 Windows Toast Notifications (or simply Toasts) are flat notifications that pop up in the bottom right corner of your screen and can be accessed through the Windows Action Center. You can incorporate these notifications in your next Windows Presentation Foundation app by using this WPF-Toast control.

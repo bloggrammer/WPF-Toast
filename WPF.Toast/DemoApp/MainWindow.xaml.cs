@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WPF.Toast.Controls;
 using WPF.Toast.Enums;
+using WPF.Toast.Samples;
 
 namespace DemoApp {
     /// <summary>
@@ -17,7 +18,7 @@ namespace DemoApp {
 
         private void ToastAction_Button_Click(object sender, RoutedEventArgs e)
         {
-            new ToastAction 
+            new ToastAction(new SampleContentOne(), _fadeTimeOut)
             {
                 Title = "Notification: This is Toast Action",
                 NotificationMessage = "I am toast action",
@@ -29,7 +30,7 @@ namespace DemoApp {
 
         private void ToastContent_Button_Click(object sender, RoutedEventArgs e)
         {
-            new ToastContent
+            new ToastContent(_fadeTimeOut)
             {
                 Title = "Notification: This is Toast Content",
                 NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque..",
@@ -51,8 +52,14 @@ namespace DemoApp {
             _positionReference = value;
         }
         
+        private void TimeSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _fadeTimeOut = (int) e.NewValue;
+            TimeLabel.Content = $"Show time in seconds: {_fadeTimeOut}s (Set 0 for default timing)";
+        }
 
         private Positions? _positions;
         private PositionReference? _positionReference;
+        private int _fadeTimeOut;
     }
 }
