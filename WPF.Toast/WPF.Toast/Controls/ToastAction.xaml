@@ -174,7 +174,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
     </local:ToastBase.Resources>
+    
     <Border  BorderBrush="#C0C0C0" 
              BorderThickness="2" Margin="2"
             Padding="10" >

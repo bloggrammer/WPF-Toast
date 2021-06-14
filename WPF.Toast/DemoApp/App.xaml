@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:DemoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="ToastCloseButtonBackground">#ff0</SolidColorBrush>
+        <SolidColorBrush x:Key="ToastCloseButtonForeground">#9f1300</SolidColorBrush>
+        <SolidColorBrush x:Key="ToastBackground">#f0f</SolidColorBrush>
+        <SolidColorBrush x:Key="ToastBorderBrush">#0f0</SolidColorBrush>
+        <SolidColorBrush x:Key="ToastContentForeground">#f90</SolidColorBrush>
     </Application.Resources>
 </Application>

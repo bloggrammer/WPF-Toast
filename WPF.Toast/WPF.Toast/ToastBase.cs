@@ -106,6 +106,10 @@ namespace WPF.Toast
             Left = topLeft.Item2;
             _fadeInAnimation.Completed += FadeInAnimation_Completed;
 
+            var bg = Application.Current.Resources["ToastBackground"];
+            if(bg is null) {
+                Application.Current.Resources.Add("ToastBackground", new SolidColorBrush(Colors.Black));
+            }
             BeginAnimation(OpacityProperty, _fadeInAnimation);
         }
 
