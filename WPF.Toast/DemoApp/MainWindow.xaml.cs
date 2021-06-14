@@ -17,25 +17,24 @@ namespace DemoApp {
 
         private void ToastAction_Button_Click(object sender, RoutedEventArgs e)
         {
-            new ToastAction(_fadeTimeOut)
-            {
+            new ToastAction(_fadeTimeOut) {
                 Title = "Notification: This is Toast Action",
                 NotificationMessage = "I am toast action",
                 Position = _positions != null ? _positions.Value : Positions.Central,
                 PositionReference = _positionReference != null ? _positionReference.Value : PositionReference.Owner,
+                Content = new ToastActionContent(),
                 Owner = this
             };
         }
 
         private void ToastContent_Button_Click(object sender, RoutedEventArgs e)
         {
-            new ToastContent(_fadeTimeOut)
-            {
+            new ToastContent(_fadeTimeOut) {
                 Title = "Notification: This is Toast Content",
                 NotificationMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia lacus ut tempor pellentesque..",
-                Position = _positions != null? _positions.Value : Positions.Central,
-                PositionReference = _positionReference !=null ? _positionReference.Value: PositionReference.Owner,
-                Owner = this
+                Position = _positions != null ? _positions.Value : Positions.Central,
+                PositionReference = _positionReference != null ? _positionReference.Value : PositionReference.Owner,
+                Owner = this,
             };
         }
 

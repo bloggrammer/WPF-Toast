@@ -21,32 +21,6 @@ namespace WPF.Toast.Controls
             catch { }
         }
 
-        public bool IsCancel { get; set; }
-        public bool IsOK { get; set; }
-        public bool IsSnoozed { get; set; }
-        public int SnoozedIndex { get; set; }
         public override bool IsToastAction { get; set; } = true;
-        private void OnOkClick(object sender, System.Windows.RoutedEventArgs e)
-        {
-            SnoozedIndex = snoozedSelection.SelectedIndex;
-            IsSnoozed = (bool)snoozedAction.IsChecked;
-            IsCancel = (bool)cancelAction.IsChecked;
-            IsOK = (bool)okAction.IsChecked;
-            ToastNotificationEvent?.Invoke();
-            CloseAction();
-        }
-
-        private void OnCancelClick(object sender, System.Windows.RoutedEventArgs e)
-        {
-            IsCancel = true;
-            SnoozedIndex = snoozedSelection.SelectedIndex;
-            IsSnoozed = (bool)snoozedAction.IsChecked;
-            IsOK = (bool)okAction.IsChecked;
-            ToastNotificationEvent?.Invoke();
-            CloseAction();
-        }
-        public event ToastNotification ToastNotificationEvent;
     }
-
-    public delegate void ToastNotification();
 }
