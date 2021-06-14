@@ -13,14 +13,6 @@ namespace WPF.Toast.Samples
         {
             InitializeComponent();
         }
-
-
-        public bool IsCancel { get; set; }
-        public bool IsOK { get; set; }
-        public bool IsSnoozed { get; set; }
-        public int SnoozedIndex { get; set; }
-
-
         private void OnOkClick(object sender, System.Windows.RoutedEventArgs e)
         {
             SnoozedIndex = snoozedSelection.SelectedIndex;
@@ -37,6 +29,10 @@ namespace WPF.Toast.Samples
             IsOK = (bool)okAction.IsChecked;
             ToastClosed?.Invoke(this);
         }
+        public bool IsCancel { get; set; }
+        public bool IsOK { get; set; }
+        public bool IsSnoozed { get; set; }
+        public int SnoozedIndex { get; set; }
 
         public event ToastActionContentEventHandler ToastClosed;
     }
