@@ -31,7 +31,16 @@ bld/
 [Oo]bj/
 [Oo]ut/
 [Ll]og/
+<<<<<<< HEAD
 [Ll]ogs/
+=======
+bin/
+obj/
+Debug/
+Release/
+
+uploads/
+>>>>>>> a1a3a47e2f82c38a75530683254fc86e8c163008
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

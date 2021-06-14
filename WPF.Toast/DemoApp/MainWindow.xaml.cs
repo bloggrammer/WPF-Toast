@@ -18,7 +18,8 @@ namespace DemoApp {
 
         private void ToastAction_Button_Click(object sender, RoutedEventArgs e)
         {
-            new ToastAction(_fadeTimeOut) {
+            new ToastAction(_fadeTimeOut)
+            {
                 Title = "Notification: This is Toast Action",
                 NotificationMessage = "I am toast action",
                 Position = _positions != null ? _positions.Value : Positions.Central,

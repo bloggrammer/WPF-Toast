@@ -34,3 +34,5 @@ C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toas
 C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.dll
 C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\WPF.Toast.pdb
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Samples\SampleContentOne.g.cs
+C:\Users\user\Desktop\LocalRepo\WPF-Toast\WPF.Toast\WPF.Toast\obj\Debug\Samples\SampleContentOne.baml

@@ -166,7 +166,6 @@ namespace WPF.Toast {
             _activeTimer?.Stop();
             FadeOut();
         }
-
         public abstract bool IsToastAction { get; set; }
         private readonly DoubleAnimation _fadeInAnimation;
         private readonly DoubleAnimation _fadeOutAnimation;

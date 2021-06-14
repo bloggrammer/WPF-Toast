@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3221612483
+4370978959
 1-1539851932
-122016182927
+15-571885990
 131569487696
-Controls\ToastAction.xaml;Controls\ToastContent.xaml;Themes\Generic.xaml;
+Controls\ToastAction.xaml;Controls\ToastContent.xaml;Samples\SampleContentOne.xaml;Themes\Generic.xaml;
 
 False
 

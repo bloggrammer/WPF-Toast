@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Media;
+using WPF.Toast.Interfaces;
 
 namespace WPF.Toast.Controls {
     /// <summary>
@@ -21,6 +22,5 @@ namespace WPF.Toast.Controls {
         }
 
         public override bool IsToastAction { get; set; } = true;
-
     }
 }
