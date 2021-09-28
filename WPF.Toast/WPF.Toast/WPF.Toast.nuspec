@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>WPF-Toast</id>
+    <version>1.0</version>
+     <title>WPF Toast Notification</title>
+   <authors>John Ansa</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+     <projectUrl>https://github.com/Blogrammer/WPF-Toast</projectUrl>
+   <description>A highly-customizable rich Toast Notifications in WPF Applications.</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright © John Ansa. 2021</copyright>
+    <tags>wpf notifications xaml windows messages toasts popups toast-notifications toastnotifications windows-notifications interactive-notifications wpf-applications displaying-notifications</tags>
+  </metadata>
+</package>

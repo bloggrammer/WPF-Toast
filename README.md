@@ -1,3 +1,6 @@
+![GitHub](https://img.shields.io/github/license/Blogrammer/WPF-Toast?logo=github) [![NuGet](https://img.shields.io/nuget/v/WPF-Toast?)](https://www.nuget.org/packages/WPF-Toast?/) ![Nuget](https://img.shields.io/nuget/dt/WPF-Toast??logo=nuget)
+
+
 # WPF-Toast
 
 Show Toast Notifications in WPF Applications
